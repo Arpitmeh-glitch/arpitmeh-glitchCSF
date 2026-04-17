@@ -46,7 +46,7 @@ const projects = [
       "Scikit-learn",
     ],
     github: "https://github.com/Arpitmeh-glitch/phishguard",
-    demo: "https://phishguard-qfttb9pcu-arpitmeh-glitchs-projects.vercel.app/",
+    demo: "https://phishguard-2kku.vercel.app/",
     metrics: [
       { label: "ML Accuracy", value: "96.8%" },
       { label: "Encryption", value: "AES-256" },
