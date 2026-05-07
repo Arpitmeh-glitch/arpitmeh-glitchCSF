@@ -1,4 +1,4 @@
-import "./projects.css";
+import "./project.css";
 import type { Metadata } from "next";
 
 // ─── SEO Metadata ─────────────────────────────────────────────────────────────
