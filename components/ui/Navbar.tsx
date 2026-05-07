@@ -22,6 +22,7 @@ export default function Navbar() {
 
   return (
     <motion.nav
+      aria-label="Primary navigation"
       initial={{ y: -60, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.6, ease: "easeOut" }}
@@ -33,10 +34,11 @@ export default function Navbar() {
     >
       <div className="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         {/* Logo */}
-        <a href="#" className="font-display text-sm tracking-[0.2em] text-white group">
+        <a href="/" className="font-display text-sm tracking-[0.2em] text-white group">
           <span className="text-[var(--cyan)] group-hover:text-white transition-colors">&gt;</span>
           <span className="ml-2 group-hover:text-[var(--cyan)] transition-colors">meh-glitch</span>
           <span className="ml-1 text-[var(--cyan)] opacity-60">.exe</span>
+          <span className="sr-only">Home</span>
         </a>
 
         {/* Desktop nav */}
@@ -45,7 +47,7 @@ export default function Navbar() {
             <a
               key={link.label}
               href={link.href}
-              className="font-mono text-[0.7rem] tracking-[0.15em] text-[var(--text-secondary)] hover:text-[var(--cyan)] transition-colors duration-200 relative group"
+              className="font-mono text-[0.7rem] tracking-[0.15em] text-[var(--text-secondary)] hover:text-[var(--cyan)] transition-colors duration-200 relative group focus:outline-none focus:ring-2 focus:ring-[var(--cyan)] focus:ring-offset-2 focus:ring-offset-[#020408]"
             >
               {link.label}
               <span className="absolute -bottom-1 left-0 w-0 h-px bg-[var(--cyan)] group-hover:w-full transition-all duration-300" />
@@ -53,7 +55,7 @@ export default function Navbar() {
           ))}
           <a
             href="#contact"
-            className="font-mono text-[0.7rem] tracking-[0.15em] px-4 py-2 border border-[var(--cyan)] text-[var(--cyan)] hover:bg-[rgba(0,240,255,0.1)] transition-all duration-200"
+            className="font-mono text-[0.7rem] tracking-[0.15em] px-4 py-2 border border-[var(--cyan)] text-[var(--cyan)] hover:bg-[rgba(0,240,255,0.1)] transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-[var(--cyan)] focus:ring-offset-2 focus:ring-offset-[#020408]"
           >
             CONNECT
           </a>
@@ -61,9 +63,12 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button
-          className="md:hidden text-[var(--cyan)] font-mono text-xs"
+          type="button"
+          className="md:hidden text-[var(--cyan)] font-mono text-xs focus:outline-none focus:ring-2 focus:ring-[var(--cyan)] focus:ring-offset-2 focus:ring-offset-[#020408]"
           onClick={() => setMobileOpen(!mobileOpen)}
           aria-label="Toggle menu"
+          aria-expanded={mobileOpen}
+          aria-controls="mobile-menu"
         >
           {mobileOpen ? "[CLOSE]" : "[MENU]"}
         </button>
@@ -73,6 +78,8 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="mobile-menu"
+            role="menu"
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
@@ -85,7 +92,7 @@ export default function Navbar() {
                   key={link.label}
                   href={link.href}
                   onClick={() => setMobileOpen(false)}
-                  className="font-mono text-xs tracking-widest text-[var(--text-secondary)] hover:text-[var(--cyan)] transition-colors"
+                  className="font-mono text-xs tracking-widest text-[var(--text-secondary)] hover:text-[var(--cyan)] transition-colors focus:outline-none focus:ring-2 focus:ring-[var(--cyan)] focus:ring-offset-2 focus:ring-offset-[#020408]"
                 >
                   {"> "}{link.label}
                 </a>

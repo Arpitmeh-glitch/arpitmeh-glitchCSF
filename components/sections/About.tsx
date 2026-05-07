@@ -65,35 +65,37 @@ export default function About() {
                 </span>
               </div>
 
-              <div className="font-mono text-sm space-y-3">
+              <div className="font-mono text-sm">
                 <div className="text-[var(--text-muted)] text-xs mb-4">{"{"}</div>
-                {terminalData.map((item, i) => (
-                  <motion.div
-                    key={item.key}
-                    initial={{ opacity: 0, x: -10 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.08, duration: 0.4 }}
-                    viewport={{ once: true }}
-                    className="flex items-center gap-3 pl-4"
-                  >
-                    <span className="text-[var(--cyan)] opacity-60 w-20 shrink-0 text-xs">
-                      "{item.key}":
-                    </span>
-                    <span
-                      className={`text-xs ${
-                        item.highlight
-                          ? "text-[var(--cyan)] font-bold"
-                          : "text-[var(--text-primary)]"
-                      }`}
+                <dl className="space-y-3 pl-4">
+                  {terminalData.map((item, i) => (
+                    <motion.div
+                      key={item.key}
+                      initial={{ opacity: 0, x: -10 }}
+                      whileInView={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.08, duration: 0.4 }}
+                      viewport={{ once: true }}
+                      className="grid grid-cols-[auto_1fr_auto] gap-3 items-start"
                     >
-                      "{item.value}"
-                      {i < terminalData.length - 1 ? "," : ""}
-                    </span>
-                    {item.highlight && (
-                      <span className="w-2 h-2 rounded-full bg-[var(--cyan)] animate-pulse ml-1" />
-                    )}
-                  </motion.div>
-                ))}
+                      <dt className="text-[var(--cyan)] opacity-60 w-20 shrink-0 text-xs">
+                        "{item.key}":
+                      </dt>
+                      <dd
+                        className={`text-xs ${
+                          item.highlight
+                            ? "text-[var(--cyan)] font-bold"
+                            : "text-[var(--text-primary)]"
+                        }`}
+                      >
+                        "{item.value}"
+                        {i < terminalData.length - 1 ? "," : ""}
+                      </dd>
+                      {item.highlight && (
+                        <span className="w-2 h-2 rounded-full bg-[var(--cyan)] animate-pulse ml-1" />
+                      )}
+                    </motion.div>
+                  ))}
+                </dl>
                 <div className="text-[var(--text-muted)] text-xs mt-4">{"}"}</div>
               </div>
 

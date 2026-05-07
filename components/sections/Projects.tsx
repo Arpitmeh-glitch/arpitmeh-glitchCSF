@@ -98,7 +98,10 @@ function ProjectCard({ project, delay }: { project: typeof projects[0]; delay: n
 
         {/* Main content */}
         <div className="p-6">
-          <h3 className="font-display text-xl md:text-2xl font-bold text-white tracking-wider mb-3 group-hover:text-[var(--cyan)] transition-colors duration-300">
+          <h3
+            id={`project-${project.id}-title`}
+            className="font-display text-xl md:text-2xl font-bold text-white tracking-wider mb-3 group-hover:text-[var(--cyan)] transition-colors duration-300"
+          >
             {project.title}
           </h3>
 
@@ -172,8 +175,11 @@ function ProjectCard({ project, delay }: { project: typeof projects[0]; delay: n
               <span className="opacity-70">→</span>
             </a>
             <button
+              type="button"
               onClick={() => setExpanded(!expanded)}
-              className="font-mono text-[0.65rem] text-[var(--text-muted)] hover:text-[var(--cyan)] transition-colors tracking-widest ml-auto"
+              className="font-mono text-[0.65rem] text-[var(--text-muted)] hover:text-[var(--cyan)] transition-colors tracking-widest ml-auto focus:outline-none focus:ring-2 focus:ring-[var(--cyan)] focus:ring-offset-2 focus:ring-offset-[#020408]"
+              aria-expanded={expanded}
+              aria-controls={`project-${project.id}-details`}
             >
               {expanded ? "[ COLLAPSE ]" : "[ DETAILS ]"}
             </button>
