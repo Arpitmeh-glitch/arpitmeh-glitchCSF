@@ -260,13 +260,13 @@ export default function ResumePage() {
               >
                 <span aria-hidden="true">⬇</span> Download Resume
               </a>
-              <button
+              <a
+                href="javascript:window.print()"
                 className="cyber-btn large"
-                onClick={() => typeof window !== "undefined" && window.print()}
                 aria-label="Print resume"
               >
                 <span aria-hidden="true">⎙</span> Print
-              </button>
+              </a>
               <a href="/" className="cyber-btn" aria-label="Go to portfolio homepage">⌂ Home</a>
               <a href="/about" className="cyber-btn" aria-label="About page">◈ About</a>
               <a href="/projects" className="cyber-btn" aria-label="Projects page">▣ Projects</a>
