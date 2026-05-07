@@ -1,3 +1,4 @@
+import "./projects.css";
 import type { Metadata } from "next";
 
 // ─── SEO Metadata ─────────────────────────────────────────────────────────────
@@ -361,7 +362,7 @@ export default function ProjectsPage() {
               "@type": "Person",
               name: "Arpit Mehrotra",
               url: "https://arpitmehrotra.vercel.app",
-              image: "https://arpitmehrotra.vercel.app/arpit-mehrotra.jpg",
+              
               sameAs: [
                 "https://github.com/Arpitmeh-glitch",
                 "https://linkedin.com/in/arpitmehrotra-dev",

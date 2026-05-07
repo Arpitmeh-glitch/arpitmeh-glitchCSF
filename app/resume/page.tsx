@@ -1,5 +1,5 @@
+import "./resume.css";
 import type { Metadata } from "next";
-
 // ─── SEO Metadata ─────────────────────────────────────────────────────────────
 export const metadata: Metadata = {
   title: "Resume | Arpit Mehrotra",
@@ -442,7 +442,6 @@ export default function ResumePage() {
           </div>
         </section>
       </div>
-
     </>
   );
 }
