@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "../styles/globals.css";
 import { siteName, siteUrl, description, socialImage, twitterHandle } from "@/lib/seo";
+import { personSchema } from "@/lib/seo";
 
 const analyticsId = process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS_ID;
 
@@ -11,7 +12,10 @@ const structuredData = {
   url: siteUrl,
   description,
   jobTitle: "Cybersecurity Professional",
-  sameAs: [],
+  sameAs: [
+    "https://linkedin.com/in/arpitmehrotra-dev",
+    "https://github.com/Arpitmeh-glitch"
+  ],
   mainEntityOfPage: {
     "@type": "WebPage",
     "@id": siteUrl,
@@ -67,6 +71,13 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <head>
+        <meta name="google-site-verification" content="UfofqfLf2AbY9mx6fsr1N3L1zbXrUcIK0rQU-2OutLc" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(personSchema),
+          }}
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
