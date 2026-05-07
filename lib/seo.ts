@@ -1,16 +1,19 @@
 import type { Metadata } from "next";
 
 export const siteUrl = "https://arpitmehrotra.vercel.app";
+
 export const twitterHandle = "@ArpitMe3799501";
+
 export const siteName = "Arpit Mehrotra | Cybersecurity Portfolio";
-export const description = "Arpit Mehrotra is a cybersecurity enthusiast and CSE student focused on penetration testing, web security, Python, Linux, and full-stack development.";
+
+export const description =
+  "Arpit Mehrotra is a cybersecurity enthusiast and CSE student focused on penetration testing, web security, Python, Linux, and full-stack development.";
+
 export const socialImage = "/og-image.png";
 
-export const sitemapPages = [
-  { path: "/", priority: 1.0, changefreq: "daily" },
-  { path: "/blueprint", priority: 0.8, changefreq: "weekly" },
-];
-
+/**
+ * Shared Metadata Builder
+ */
 export function buildPageMetadata({
   title,
   description,
@@ -26,21 +29,26 @@ export function buildPageMetadata({
 
   return {
     metadataBase: new URL(siteUrl),
+
     title,
     description,
+
     alternates: {
       canonical: url,
     },
+
     robots: {
       index: true,
       follow: true,
     },
+
     openGraph: {
       title,
       description,
       url,
       siteName,
       type: "website",
+
       images: [
         {
           url: `${siteUrl}${image}`,
@@ -50,6 +58,7 @@ export function buildPageMetadata({
         },
       ],
     },
+
     twitter: {
       card: "summary_large_image",
       title,
@@ -60,18 +69,12 @@ export function buildPageMetadata({
   };
 }
 
-export function generateSitemapXml() {
-  const urls = sitemapPages
-    .map((page) => {
-      const lastmod = "2025-05-07";
-      return `  <url>\n    <loc>${siteUrl}${page.path}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${page.changefreq}</changefreq>\n    <priority>${page.priority.toFixed(1)}</priority>\n  </url>`;
-    })
-    .join("\n");
-
-  return `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${urls}\n</urlset>`;
-}
+/**
+ * Global Person Schema
+ */
 export const personSchema = {
   "@context": "https://schema.org",
+
   "@type": "Person",
 
   name: "Arpit Mehrotra",
@@ -82,12 +85,12 @@ export const personSchema = {
 
   sameAs: [
     "https://linkedin.com/in/arpitmehrotra-dev",
-    "https://github.com/Arpitmeh-glitch"
+    "https://github.com/Arpitmeh-glitch",
   ],
 
   alumniOf: {
     "@type": "CollegeOrUniversity",
-    name: "UPES"
+    name: "UPES",
   },
 
   knowsAbout: [
@@ -98,6 +101,9 @@ export const personSchema = {
     "Linux",
     "Nmap",
     "Burp Suite",
-    "Network Reconnaissance"
-  ]
+    "Network Reconnaissance",
+    "OWASP",
+    "Ethical Hacking",
+    "Vulnerability Assessment",
+  ],
 };
