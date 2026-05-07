@@ -63,7 +63,7 @@ export function buildPageMetadata({
 export function generateSitemapXml() {
   const urls = sitemapPages
     .map((page) => {
-      const lastmod = new Date().toISOString().split("T")[0];
+      const lastmod = "2025-05-07";
       return `  <url>\n    <loc>${siteUrl}${page.path}</loc>\n    <lastmod>${lastmod}</lastmod>\n    <changefreq>${page.changefreq}</changefreq>\n    <priority>${page.priority.toFixed(1)}</priority>\n  </url>`;
     })
     .join("\n");
