@@ -190,7 +190,7 @@ export default function AboutPage() {
                 <span aria-hidden="true">⌬</span> GitHub
               </a>
               <a
-                href="https://linkedin.com/in/arpitmehrotra"
+                href="https://linkedin.com/in/arpitmehrotra-dev"
                 className="cyber-btn"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -321,7 +321,7 @@ export default function AboutPage() {
             </p>
             <nav aria-label="Contact links">
               <a
-                href="https://linkedin.com/in/arpitmehrotra"
+                href="https://linkedin.com/in/arpitmehrotra-dev"
                 className="cyber-btn primary large"
                 target="_blank"
                 rel="noopener noreferrer"
